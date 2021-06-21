@@ -9,8 +9,8 @@ using backend.Models;
 namespace backend.Migrations
 {
     [DbContext(typeof(SatDataContext))]
-    [Migration("20210621205031_Backend")]
-    partial class Backend
+    [Migration("20210621224007_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
