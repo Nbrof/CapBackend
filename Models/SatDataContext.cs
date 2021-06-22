@@ -8,6 +8,6 @@ namespace backend.Models
         {
         }
 
-        public DbSet<SatData> TodoItems { get; set; }
+        public DbSet<SatData> SatDataItems { get; set; }
     }
 }

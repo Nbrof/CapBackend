@@ -21,30 +21,30 @@ namespace backend.Controllers
         [HttpGet] // get request to "/data"
         public IEnumerable<SatData> index(){
             // return all the data
-            return Data.TodoItems.ToList();
+            return Data.SatDataItems.ToList();
         }
 
         [HttpPost] // post request to "/data
         public IEnumerable<SatData> Post([FromBody]SatData data){
             // add information
-            Data.TodoItems.Add(data);
+            Data.SatDataItems.Add(data);
             // save changes
             Data.SaveChanges();
             // return all the data
-            return Data.TodoItems.ToList();
+            return Data.SatDataItems.ToList();
         }
 
         [HttpGet("{id}")] // get requestion to "data/{id}"
         public SatData show(long id){
             // return the specified data matched based on ID
-            return Data.TodoItems.FirstOrDefault(x => x.Id == id);
+            return Data.SatDataItems.FirstOrDefault(x => x.Id == id);
         }
 
         [HttpPut("{id}")] // put request to "data/{id}
         public IEnumerable<SatData> update([FromBody]SatData data, long id){
             // retrieve data to be updated
-            SatData oldData = Data.TodoItems.FirstOrDefault(x => x.Id == id);
-            //update their properties, can also be done with Data.TodoItems.Update
+            SatData oldData = Data.SatDataItems.FirstOrDefault(x => x.Id == id);
+            //update their properties, can also be done with Data.SatDataItems.Update
             oldData.Mission = data.Mission;
             oldData.Payload = data.Payload;
             oldData.Date = data.Date;
@@ -52,19 +52,19 @@ namespace backend.Controllers
             // Save changes
             Data.SaveChanges();
             // return updated list of data
-            return Data.TodoItems.ToList();
+            return Data.SatDataItems.ToList();
         }
 
         [HttpDelete("{id}")] // delete request to "data/{id}
         public IEnumerable<SatData> destroy(long id){
             //retrieve existing data
-            SatData oldData = Data.TodoItems.FirstOrDefault(x => x.Id == id);
+            SatData oldData = Data.SatDataItems.FirstOrDefault(x => x.Id == id);
             //remove them
-            Data.TodoItems.Remove(oldData);
+            Data.SatDataItems.Remove(oldData);
             // saves changes
             Data.SaveChanges();
             // return updated list of data
-            return Data.TodoItems.ToList();
+            return Data.SatDataItems.ToList();
         }
 
     }

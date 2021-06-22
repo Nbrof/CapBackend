@@ -39,7 +39,7 @@ namespace backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TodoItems");
+                    b.ToTable("SatDataItems");
                 });
 #pragma warning restore 612, 618
         }

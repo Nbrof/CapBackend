@@ -9,7 +9,7 @@ using backend.Models;
 namespace backend.Migrations
 {
     [DbContext(typeof(SatDataContext))]
-    [Migration("20210621224007_InitialCreate")]
+    [Migration("20210622141056_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,7 +41,7 @@ namespace backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TodoItems");
+                    b.ToTable("SatDataItems");
                 });
 #pragma warning restore 612, 618
         }
